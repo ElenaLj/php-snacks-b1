@@ -8,19 +8,26 @@ Passare come parametri GET name, mail e age e verificare (cercando i metodi che 
 // struttura URL: ?name=elena&mail=elena@gmail.com&age=24
 
 // creo variabili dei parametri
-$_GET["name"];
-$_GET["mail"];
-$_GET["age"];
+$userName = $_GET["name"];
+$userMail = $_GET["mail"];
+$userAge = $_GET["age"];
 
+
+// stampo a schermo i parametri
 var_dump($_GET["name"]);
 var_dump($_GET["mail"]);
 var_dump($_GET["age"]);
+
+
+// variabili email
+$fullStop = ".";
+$at = "@";
 
 // Se name è più lungo di 3 caratteri
 // Se mail contiene punto e @
 // Se age è un numero
 
-if(strlen($_GET["name"]) >= 3 && strpos($_GET["mail"], ".") && strpos($_GET["mail"], "@") && is_numeric($_GET["age"])) {
+if(strlen($userName) >= 3 && strpos($userMail, $fullStop) && strpos($userMail, $at) && is_numeric($userAge)) {
     echo "Accesso riuscito";
 }
 // altrimenti
